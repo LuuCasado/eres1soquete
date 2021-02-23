@@ -1,5 +1,3 @@
-import React from "react"
+import Store from './Store';
 
-const Home = () => <div>lu trola</div>;
-
-export default Home;
+export default Store;
