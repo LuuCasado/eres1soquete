@@ -1,16 +1,22 @@
 import React from "react"
 import { Layout, Menu, Breadcrumb } from 'antd';
+import 'antd/dist/antd.css';
+import "./index.css"
+import { Link } from "gatsby"
 
 const { Header, Content, Footer } = Layout;
 
 const Payments = () => (
 <Layout className="layout">
-    <Header>
+    <Header className="header">
       <div className="logo" />
-      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
+      <Menu className="header" theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+        <Menu.Item key="1">
+          <Link to="/Store/">Store</Link>
+        </Menu.Item>
+        <Menu.Item key="2">
+          <Link to="/Payments/">Payments</Link>
+        </Menu.Item>
       </Menu>
     </Header>
     <Content style={{ padding: '0 50px' }}>
