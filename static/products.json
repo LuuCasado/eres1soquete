@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "img": "https://www.tiendafunbox.com/images/products/255/1437-2087.jpg",
+      "price": 500,
+      "title": "Bucaneras rainbow"
+    },
+    {
+      "img": "https://www.tiendafunbox.com/images/products/255/1437-2087.jpg",
+      "price": 250,
+      "title": "Bucaneras rainbow"
+    },
+    {
+      "img": "https://www.tiendafunbox.com/images/products/255/1437-2087.jpg",
+      "price": 100000,
+      "title": "Bucaneras rainbow"
+    },
+    {
+      "img": "https://www.tiendafunbox.com/images/products/255/1437-2087.jpg",
+      "price": 250,
+      "title": "Bucaneras rainbow"
+    },
+    {
+      "img": "https://www.tiendafunbox.com/images/products/255/1437-2087.jpg",
+      "price": 235522345,
+      "title": "Bucaneras rainbow"
+    },
+    {
+      "img": "https://www.tiendafunbox.com/images/products/255/1437-2087.jpg",
+      "price": 250,
+      "title": "Bucaneras rainbow"
+    }
+  ]
+}
