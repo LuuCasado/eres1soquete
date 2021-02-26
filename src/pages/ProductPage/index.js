@@ -1,12 +1,12 @@
-import React from "react"
-import Layout from "../../components/global/Layout"
-import { Row, Col } from "antd"
-import ProductInfo from "../../components/store/ProductInfo"
-import ReactImageMagnify from "react-image-magnify"
+import React from "react";
+import Layout from "../../components/global/Layout";
+import { Row, Col } from "antd";
+import ProductInfo from "../../components/store/ProductInfo";
+import ReactImageMagnify from "react-image-magnify";
 
 const ProductPage = ({ location }) => {
-  const { state } = location
-  const { title, price, img } = state
+  const { state } = location;
+  const { title, price, img } = state;
 
   return (
     <Layout selectedTab={"1"}>
@@ -24,7 +24,7 @@ const ProductPage = ({ location }) => {
         </Row>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default ProductPage
+export default ProductPage;

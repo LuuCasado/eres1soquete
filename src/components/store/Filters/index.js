@@ -1,11 +1,11 @@
-import React, { useState } from "react"
-import { Row, Col } from "antd"
-import { sections } from "../../../utils/constants"
-import { Checkbox } from "antd"
+import React, { useState } from "react";
+import { Row, Col } from "antd";
+import { sections } from "../../../utils/constants";
+import { Checkbox } from "antd";
 
 const Filters = () => {
   function onChange(e) {
-    console.log(`checked = ${e.target.checked}`)
+    console.log(`checked = ${e.target.checked}`);
   }
   return (
     <Col span={6}>
@@ -17,10 +17,10 @@ const Filters = () => {
         ))}
       </Row>
     </Col>
-  )
-}
+  );
+};
 
-export default Filters
+export default Filters;
 
 /*
       <p>filter is {counts[section] ? "on" : "off"}</p>/*     

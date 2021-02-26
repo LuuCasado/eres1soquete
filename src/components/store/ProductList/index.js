@@ -1,7 +1,7 @@
-import React from "react"
-import Card from "../Card"
-import { Row, Col } from "antd"
-import "./index.css"
+import React from "react";
+import Card from "../Card";
+import { Row, Col } from "antd";
+import "./index.css";
 
 const ProductList = ({ products }) => (
   <Row>
@@ -11,6 +11,6 @@ const ProductList = ({ products }) => (
       </Col>
     ))}
   </Row>
-)
+);
 
-export default ProductList
+export default ProductList;

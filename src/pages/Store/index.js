@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react"
-import Layout from "../../components/global/Layout"
-import products from "../../../static/products.json"
-import ProductList from "../../components/store/ProductList"
-import { Row, Col } from "antd"
-import { Pagination } from "antd"
-import { Carousel } from "antd"
-import Filters from "../../components/store/Filters"
-import "./index.css"
+import React, { useState } from "react";
+import Layout from "../../components/global/Layout";
+import products from "../../../static/products.json";
+import ProductList from "../../components/store/ProductList";
+import { Row, Col } from "antd";
+import { Pagination } from "antd";
+import { Carousel } from "antd";
+import Filters from "../../components/store/Filters";
+import "./index.css";
 
 const Store = () => {
   /*useEffect(() => {
@@ -17,7 +17,7 @@ const Store = () => {
       .then(data => console.log(data))
   })*/
 
-  const [counts, setCounts] = useState({})
+  const [counts, setCounts] = useState({});
 
   return (
     <Layout selectedTab={"1"}>
@@ -37,7 +37,7 @@ const Store = () => {
           </div>
         </Carousel>
         <Row>
-         <Filters counts={counts} setCounts={setCounts} /> 
+          <Filters counts={counts} setCounts={setCounts} />
           <Col span={18}>
             <ProductList products={products.products} />
             <Pagination defaultCurrent={1} total={50} />
@@ -45,9 +45,7 @@ const Store = () => {
         </Row>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-
-
-export default Store
+export default Store;
