@@ -6,7 +6,6 @@ import "./index.css";
 const ProductList = ({ products }) => (
   <Row>
     {products.map(({ img, title, price }) => (
-      // eslint-disable-next-line react/jsx-key
       <Col className="product" span={8}>
         <Card img={img} title={title} price={price} />
       </Col>

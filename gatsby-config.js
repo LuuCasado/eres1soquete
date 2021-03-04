@@ -7,6 +7,7 @@
 module.exports = {
   /* Your site config here */
   plugins: [
-    'gatsby-plugin-eslint'
+    // 'gatsby-plugin-eslint'
+    "gatsby-plugin-root-import",
   ],
-}
+};

@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "antd";
-import { sections } from "../../../utils/constants";
+import { sections } from "src/utils/constants";
 import { Checkbox } from "antd";
 
 const Filters = () => {
@@ -11,7 +11,6 @@ const Filters = () => {
     <Col span={6}>
       <Row>
         {sections.map(section => (
-          // eslint-disable-next-line react/jsx-key
           <Col span={24}>
             <Checkbox onChange={onChange}>{section}</Checkbox>
           </Col>
