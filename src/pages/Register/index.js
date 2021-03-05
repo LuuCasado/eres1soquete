@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Layout from "src/components/global/Layout";
 import React from "react";
 import { Form, Input, Tooltip, Button } from "antd";
@@ -40,7 +41,6 @@ const Register = () => {
   const onFinish = values => {
     console.log("Received values of form: ", values);
   };
-
   return (
     <Layout selectedTab={"3"}>
       <div className="site-layout-content">

@@ -17,7 +17,7 @@ const Store = () => {
       .then(data => console.log(data))
   })*/
 
-  const [counts, setCounts] = useState({});
+  const [filters, setFilters] = useState([]);
 
   return (
     <Layout selectedTab={"1"}>
@@ -37,9 +37,20 @@ const Store = () => {
           </div>
         </Carousel>
         <Row>
-          <Filters counts={counts} setCounts={setCounts} />
+          <Filters
+            filters={filters}
+            setFilters={(section, value) =>
+              value
+                ? setFilters([...filters, section])
+                : setFilters([...filters].filter(filter => filter !== section))
+            }
+          />
           <Col span={18}>
-            <ProductList products={products.products} />
+            <ProductList
+              products={products.products.filter(product =>
+                !filters.length ? true : filters.includes(product.category)
+              )}
+            />
             <Pagination defaultCurrent={1} total={50} />
           </Col>
         </Row>

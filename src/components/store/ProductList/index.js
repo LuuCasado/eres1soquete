@@ -5,8 +5,8 @@ import "./index.css";
 
 const ProductList = ({ products }) => (
   <Row>
-    {products.map(({ img, title, price }) => (
-      <Col className="product" span={8}>
+    {products.map(({ img, title, price }, index) => (
+      <Col key={title + index} className="product" span={8}>
         <Card img={img} title={title} price={price} />
       </Col>
     ))}
