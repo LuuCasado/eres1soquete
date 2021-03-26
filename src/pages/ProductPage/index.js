@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from "react";
 import Layout from "../../components/global/Layout";
 import { Row, Col } from "antd";
@@ -5,8 +6,12 @@ import ProductInfo from "../../components/store/ProductInfo";
 import ReactImageMagnify from "react-image-magnify";
 
 const ProductPage = ({ location }) => {
-  const { state } = location;
-  const { title, price, img } = state;
+  const { state: product } = location;
+  const { title, price, img } = product;
+  const addToCart = () => {
+    const currentCart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    sessionStorage.setItem("cart", JSON.stringify([...currentCart, product]));
+  };
 
   return (
     <Layout selectedTab={"1"}>
@@ -19,7 +24,7 @@ const ProductPage = ({ location }) => {
             />
           </Col>
           <Col span={12}>
-            <ProductInfo title={title} price={price} />
+            <ProductInfo title={title} price={price} addToCart={addToCart} />
           </Col>
         </Row>
       </div>
