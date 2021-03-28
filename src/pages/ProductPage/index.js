@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React from "react";
 import Layout from "../../components/global/Layout";
 import { Row, Col } from "antd";

@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "src/components/global/Layout";
 import { Form, Input, Button, Checkbox } from "antd";
+import { login } from "src/utils/auth";
 
 const layout = {
   labelCol: {
@@ -18,8 +19,12 @@ const tailLayout = {
 };
 
 const Login = () => {
-  const onFinish = values => {
-    console.log("Success:", values);
+  // TODO: remove components from screen
+  // TODO: navigate out of login screen in case we are already logged in
+  const onFinish = ({ identifier, password, remember }) => {
+    console.log("Success:", { identifier, password, remember });
+    // TODO: remember me
+    login({ identifier, password });
   };
 
   const onFinishFailed = errorInfo => {
@@ -39,7 +44,7 @@ const Login = () => {
         >
           <Form.Item
             label="Usuario"
-            name="username"
+            name="identifier"
             rules={[
               {
                 required: true,

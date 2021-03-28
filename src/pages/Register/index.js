@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import Layout from "src/components/global/Layout";
 import React from "react";
 import { Form, Input, Tooltip, Button } from "antd";
