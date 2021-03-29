@@ -5,9 +5,9 @@ import "./index.css";
 
 const ProductList = ({ products }) => (
   <Row>
-    {products.map(({ img, title, price }, index) => (
+    {products.map(({ img, title, price, id }, index) => (
       <Col key={title + index} className="product" span={8}>
-        <Card img={img} title={title} price={price} />
+        <Card img={img} title={title} price={price} id={id} />
       </Col>
     ))}
   </Row>

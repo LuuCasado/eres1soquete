@@ -61,11 +61,11 @@ const Register = () => {
             rules={[
               {
                 type: "email",
-                message: "The input is not valid E-mail!",
+                message: "El E-mail no es válido",
               },
               {
                 required: true,
-                message: "Please input your E-mail!",
+                message: "Por favor, ingresa tu E-mail",
               },
             ]}
           >
