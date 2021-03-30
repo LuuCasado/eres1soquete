@@ -138,7 +138,6 @@ const Register = () => {
             label="Ciudad"
             rules={[
               {
-                type: "array",
                 required: true,
                 message: "Please select your habitual residence!",
               },

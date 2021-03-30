@@ -1,33 +1,24 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/global/Layout";
-import { Button } from "antd";
-import { Col } from "antd";
+import ProductList from "src/components/cart/ProductList";
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
   const removeToCart = removedId => {
     const removedFromCart = products.filter(({ id }) => id !== removedId);
     setProducts(removedFromCart);
-    sessionStorage.setItem("cart", removeToCart);
+    sessionStorage.setItem("cart", JSON.stringify(removedFromCart));
   };
 
   useEffect(() => {
+    // eslint-disable-next-line no-undef
     const currentCart = JSON.parse(sessionStorage.getItem("cart")) || [];
     setProducts(currentCart);
   }, []);
 
   return (
     <Layout selectedTab={"5"}>
-      {products.map(({ img, title, price, id }, index) => (
-        <Col key={title + index} className="product" span={8}>
-          <div>
-            <p>{title}</p>
-            <Button type="primary" onClick={() => removeToCart(id)}>
-              Remover
-            </Button>
-          </div>
-        </Col>
-      ))}
+      <ProductList products={products} removeToCart={removeToCart} />
     </Layout>
   );
 };
