@@ -3,7 +3,7 @@ import Card from "../Card";
 import { Row, Col } from "antd";
 
 const ProductList = ({ products, removeToCart }) => (
-  <Row>
+  <Row style={{ display: "flex", flexDirection: "column" }}>
     {products.map(({ img, title, price, id }) => (
       <Col key={title + id} className="product" span={6}>
         <Card

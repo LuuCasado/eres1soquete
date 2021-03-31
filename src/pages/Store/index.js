@@ -3,7 +3,7 @@ import Layout from "../../components/global/Layout";
 import ProductList from "../../components/store/ProductList";
 import { Row, Col } from "antd";
 import { Pagination } from "antd";
-import { Carousel } from "antd";
+import Carousel from "src/components/store/Carousel";
 import Filters from "../../components/store/Filters";
 import "./index.css";
 
@@ -46,20 +46,7 @@ const Store = () => {
   return (
     <Layout selectedTab={"1"}>
       <div className="site-layout-content">
-        <Carousel autoplay className="contentStyle">
-          <div>
-            <h3 className="contentStyle">Soquetes</h3>
-          </div>
-          <div>
-            <h3 className="contentStyle">Medias</h3>
-          </div>
-          <div>
-            <h3 className="contentStyle">Bucaneras</h3>
-          </div>
-          <div>
-            <h3 className="contentStyle">Boxers</h3>
-          </div>
-        </Carousel>
+        <Carousel />
         <Row>
           <Filters
             filters={filters}
