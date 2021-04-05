@@ -28,6 +28,9 @@ const Layout = ({ children, selectedTab }) => (
         <Menu.Item key="4">
           <Link to="/Login/">Ingresa</Link>
         </Menu.Item>
+        <Menu.Item key="5">
+          <Link to="/Cart/">Carrito</Link>
+        </Menu.Item>
       </Menu>
     </Header>
     <Content style={{ padding: "0 50px" }}>
