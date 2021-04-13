@@ -1,6 +1,6 @@
 import Layout from "src/components/global/Layout";
 import React from "react";
-import RegisterForm from "src/components/store/RegisterForm";
+import RegisterForm from "src/components/auth/RegisterForm";
 
 const Register = () => {
   const onFinish = values => {

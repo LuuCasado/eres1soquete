@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/global/Layout";
 import ProductList from "src/components/cart/ProductList";
+import { setProductQuantity } from "src/utils/products";
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
@@ -9,16 +10,21 @@ const Cart = () => {
     setProducts(removedFromCart);
     sessionStorage.setItem("cart", JSON.stringify(removedFromCart));
   };
+  const setQuantity = (products, id, quantity) =>
+    setProducts(setProductQuantity(products, id, quantity));
 
   useEffect(() => {
     // eslint-disable-next-line no-undef
     const currentCart = JSON.parse(sessionStorage.getItem("cart")) || [];
     setProducts(currentCart);
   }, []);
-
   return (
     <Layout selectedTab={"5"}>
-      <ProductList products={products} removeToCart={removeToCart} />
+      <ProductList
+        products={products}
+        removeToCart={removeToCart}
+        setProductQuantity={setQuantity}
+      />
     </Layout>
   );
 };

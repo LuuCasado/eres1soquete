@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { apiURL } from "src/utils/constants";
+import { navigate } from "gatsby";
 
 const defaultState = {
   jwt: null,
@@ -25,11 +26,32 @@ export const wrapPageElement = ({ element }) => (
   </AuthContext.Provider>
 );
 
-export const login = async credentials => {
+export const login = async ({ identifier, password }) => {
   try {
-    const { data } = await axios.post(`${apiURL}/auth/local`, credentials);
-    const { jwt, user } = data;
+    const {
+      data: { jwt, user },
+    } = await axios.post(`${apiURL}/auth/local`, {
+      identifier,
+      password,
+    });
     localStorage.setItem("auth", JSON.stringify({ jwt, user, loggedIn: true }));
+    navigate("/Store");
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+export const register = async ({ username, email, password }) => {
+  try {
+    const {
+      data: { jwt, user },
+    } = await axios.post(`${apiURL}/auth/local/register`, {
+      username,
+      email,
+      password,
+    });
+    localStorage.setItem("auth", JSON.stringify({ jwt, user, loggedIn: true }));
+    navigate("/Store");
   } catch (e) {
     console.error(e);
   }

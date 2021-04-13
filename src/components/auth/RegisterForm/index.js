@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Input, Tooltip, Button } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
+import { register } from "src/utils/auth";
 
 const formItemLayout = {
   labelCol: {
@@ -33,7 +34,13 @@ const tailFormItemLayout = {
   },
 };
 
-const RegisterForm = ({ onFinish }) => {
+const RegisterForm = () => {
+  const onFinish = values => {
+    console.log("Success:", values);
+    const { email, password } = values;
+    register({ username: email, email, password });
+  };
+
   const [form] = Form.useForm();
 
   return (
@@ -43,7 +50,6 @@ const RegisterForm = ({ onFinish }) => {
       name="register"
       onFinish={onFinish}
       initialValues={{
-        residence: [""],
         prefix: "0223",
       }}
       scrollToFirstError
@@ -106,7 +112,7 @@ const RegisterForm = ({ onFinish }) => {
       </Form.Item>
 
       <Form.Item
-        name="Usuario de Instagram"
+        name="instagramUser"
         label={
           <span>
             Usuario de Instagram&nbsp;
@@ -132,7 +138,7 @@ const RegisterForm = ({ onFinish }) => {
         rules={[
           {
             required: true,
-            message: "Please select your habitual residence!",
+            message: "Por favor, ingresa tu ciudad de residencia",
           },
         ]}
       >

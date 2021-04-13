@@ -23,16 +23,3 @@ const Filters = ({ filters, setFilters }) => {
 };
 
 export default Filters;
-
-/*
-      <p>filter is {counts[section] ? "on" : "off"}</p>/*     
-      <button
-            onClick={() =>
-              setCounts({
-                ...counts,
-                [section]: !counts[section] ? true : false,
-              })
-            }
-          >
-            {section}
-          </button>*/
