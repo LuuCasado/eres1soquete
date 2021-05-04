@@ -17,7 +17,6 @@ const Store = () => {
 
   useEffect(() => {
     const url = "https://my-json-server.typicode.com/LuuCasado/json/db";
-    // eslint-disable-next-line no-undef
     fetch(url)
       .then(response => response.json())
       .then(({ products }) => setProducts(products));

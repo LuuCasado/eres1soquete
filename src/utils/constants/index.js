@@ -9,3 +9,7 @@ export const sections = [
   "Mistery Box",
   "Promos",
 ];
+
+export const privateRoutes = ["/Payments"]; // TODO: add private routes here
+
+export const apiURL = "http://localhost:1337";

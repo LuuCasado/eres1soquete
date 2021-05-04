@@ -4,10 +4,10 @@ import { Link } from "gatsby";
 
 const { Meta } = AntdCard;
 
-const Card = product => {
-  const { img, title, price } = product;
+const Card = props => {
+  const { img, title, price, id } = props;
   return (
-    <Link to={"/ProductPage"} state={product}>
+    <Link to={"/ProductPage"} state={{ img, title, price, id }}>
       <AntdCard
         hoverable
         style={{ width: 240 }}
