@@ -33,7 +33,10 @@ const Card = ({
       <div style={{ display: "flex", alignItems: "center" }}>
         <i
           className="fas fa-minus"
-          style={{ marginRight: 10, cursor: "pointer" }}
+          style={{
+            marginRight: 10,
+            cursor: quantity === 1 ? "not-allowed" : "pointer",
+          }}
           onClick={() => setProductQuantity(products, id, quantity - 1)}
         ></i>
         <span>{quantity}</span>

@@ -44,13 +44,33 @@ const ProductPage = ({ location }) => {
       <div className="site-layout-content">
         <Row>
           <Col span={12}>
-            <ReactImageMagnify
-              smallImage={{ alt: title, src: img }}
-              largeImage={{ src: img, width: 800, height: 800 }}
-            />
+            <Col span={20} offset={2}>
+              <ReactImageMagnify
+                {...{
+                  smallImage: {
+                    alt: title,
+                    isFluidWidth: true,
+                    src: img,
+                    sizes:
+                      "(max-width: 480px) 100vw, (max-width: 1200px) 30vw, 360px",
+                  },
+                  largeImage: {
+                    src: img,
+                    width: 800,
+                    height: 800,
+                  },
+                  lensStyle: { backgroundColor: "rgba(0,0,0,.6)" },
+                  isHintEnabled: true,
+                  shouldHideHintAfterFirstActivation: false,
+                  enlargedImagePosition: "over",
+                }}
+              />
+            </Col>
           </Col>
           <Col span={12}>
-            <ProductInfo title={title} price={price} addToCart={addToCart} />
+            <Col span={20} offset={2}>
+              <ProductInfo title={title} price={price} addToCart={addToCart} />
+            </Col>
           </Col>
         </Row>
       </div>

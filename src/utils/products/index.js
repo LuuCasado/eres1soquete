@@ -1,7 +1,6 @@
 export const setProductQuantity = (products = [], id, quantity = 0) => {
-  console.log(products, id, quantity);
   if (quantity < 1) {
-    return;
+    return products;
   }
   const updatedProducts = products.map(product =>
     product.id === id ? { ...product, quantity: quantity } : product
