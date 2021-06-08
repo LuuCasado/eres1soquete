@@ -26,8 +26,14 @@ export const wrapPageElement = ({ element }) => (
   </AuthContext.Provider>
 );
 
-export const login = async ({ identifier, password }) => {
+export const login = async ({ identifier, password, remember }) => {
   try {
+    if (remember) {
+      localStorage.setItem(
+        "credentials",
+        JSON.stringify({ identifier, password })
+      );
+    }
     const {
       data: { jwt, user },
     } = await axios.post(`${apiURL}/auth/local`, {
@@ -58,5 +64,3 @@ export const register = async ({ username, email, password }) => {
 };
 
 // TODO: add logout flow
-
-// TODO: add register flow

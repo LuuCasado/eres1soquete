@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "src/components/global/Layout";
 import { Form, Input, Button, Checkbox } from "antd";
 import { login } from "src/utils/auth";
+import { navigate } from "gatsby";
 
 const layout = {
   labelCol: {
@@ -21,15 +22,16 @@ const tailLayout = {
 const Login = () => {
   // TODO: remove components from screen
   // TODO: navigate out of login screen in case we are already logged in
+
   const onFinish = ({ identifier, password, remember }) => {
     console.log("Success:", { identifier, password, remember });
-    // TODO: remember me
-    login({ identifier, password });
+    login({ identifier, password, remember });
   };
-
   const onFinishFailed = errorInfo => {
     console.log("Failed:", errorInfo);
   };
+  const credentials = JSON.parse(localStorage.getItem("credentials"));
+
   return (
     <Layout selectedTab={"4"}>
       <div className="site-layout-content">
@@ -37,6 +39,7 @@ const Login = () => {
           {...layout}
           name="basic"
           initialValues={{
+            ...credentials,
             remember: true,
           }}
           onFinish={onFinish}

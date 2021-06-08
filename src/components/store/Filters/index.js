@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from "antd";
 import { sections } from "src/utils/constants";
-import { Checkbox } from "antd";
+import { Switch } from "antd";
 
 const Filters = ({ filters, setFilters }) => {
   return (
@@ -9,12 +9,11 @@ const Filters = ({ filters, setFilters }) => {
       <Row>
         {sections.map((section, index) => (
           <Col key={index} span={24}>
-            <Checkbox
+            <Switch
               checked={filters.includes(section)}
-              onChange={e => setFilters(section, e.target.checked)}
-            >
-              {section}
-            </Checkbox>
+              onChange={checked => setFilters(section, checked)}
+            />
+            <span>{section}</span>
           </Col>
         ))}
       </Row>
