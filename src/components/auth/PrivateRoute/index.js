@@ -1,13 +1,18 @@
 import { useContext } from "react";
+import { AuthContext } from "src/utils/auth";
 import { navigate } from "gatsby";
 import { privateRoutes } from "src/utils/constants";
-import { AuthContext } from "src/utils/auth";
 
 const PrivateRoute = ({ children, location }) => {
-  const authState = useContext(AuthContext);
-  const isAuthenticated = authState.loggedIn && authState.user;
+  const {
+    auth: { loggedIn, user },
+  } = useContext(AuthContext);
+  const isAuthenticated = loggedIn && user;
 
-  if (!isAuthenticated && privateRoutes.includes(location.pathname)) {
+  if (
+    !isAuthenticated &&
+    privateRoutes.includes(location.pathname.replaceAll("/", ""))
+  ) {
     navigate("/Login");
     return null;
   }

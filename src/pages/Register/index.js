@@ -1,10 +1,12 @@
 import Layout from "src/components/global/Layout";
 import React from "react";
 import RegisterForm from "src/components/auth/RegisterForm";
+import { register } from "src/utils/auth";
 
 const Register = () => {
   const onFinish = values => {
-    console.log("Received values of form: ", values);
+    const { email, password } = values;
+    register({ username: email, email, password });
   };
   return (
     <Layout selectedTab={"3"}>

@@ -10,6 +10,6 @@ export const sections = [
   "Promos",
 ];
 
-export const privateRoutes = ["/Payments"]; // TODO: add private routes here
+export const privateRoutes = ["Payments"]; // TODO: add private routes here
 
 export const apiURL = "http://localhost:1337";

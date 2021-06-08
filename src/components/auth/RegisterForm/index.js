@@ -1,7 +1,6 @@
 import React from "react";
 import { Form, Input, Tooltip, Button } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
-import { register } from "src/utils/auth";
 
 const formItemLayout = {
   labelCol: {
@@ -34,13 +33,7 @@ const tailFormItemLayout = {
   },
 };
 
-const RegisterForm = () => {
-  const onFinish = values => {
-    console.log("Success:", values);
-    const { email, password } = values;
-    register({ username: email, email, password });
-  };
-
+const RegisterForm = ({ onFinish }) => {
   const [form] = Form.useForm();
 
   return (

@@ -13,6 +13,7 @@ export const AuthContext = React.createContext();
 
 export const initStorage = () => {
   const storage = JSON.parse(localStorage.getItem("auth"));
+
   if (!storage) {
     localStorage.setItem("auth", JSON.stringify(defaultState));
     return defaultState;
@@ -45,6 +46,11 @@ export const login = async ({ identifier, password, remember }) => {
   } catch (e) {
     console.error(e);
   }
+};
+
+export const logout = async () => {
+  localStorage.removeItem("auth");
+  navigate("/Store");
 };
 
 export const register = async ({ username, email, password }) => {

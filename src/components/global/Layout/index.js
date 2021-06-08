@@ -1,50 +1,48 @@
-import React from "react";
-import { Layout as AntdLayout, Menu, Breadcrumb } from "antd";
-import { Link } from "gatsby";
+import React, { useState } from "react";
+import { Layout as AntdLayout, Menu } from "antd";
+import Header from "../Header";
+import Breadcrumb from "../Breadcrumb";
+import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+  ShoppingCartOutlined,
+} from "@ant-design/icons";
 import "antd/dist/antd.css";
 import "./index.css";
 
-const { Header, Content, Footer } = AntdLayout;
+const { Content, Footer, Sider } = AntdLayout;
 
-const Layout = ({ children, selectedTab }) => (
-  <AntdLayout className="layout">
-    <Header className="header">
-      <div className="logo" />
-      <Menu
-        className="header"
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={[selectedTab]}
-      >
-        <Menu.Item key="1">
-          <Link to="/Store/">Store</Link>
-        </Menu.Item>
-        <Menu.Item key="2">
-          <Link to="/Payments/">Payments</Link>
-        </Menu.Item>
-        <Menu.Item key="3">
-          <Link to="/Register/">Registrate</Link>
-        </Menu.Item>
-        <Menu.Item key="4">
-          <Link to="/Login/">Ingresa</Link>
-        </Menu.Item>
-        <Menu.Item key="5">
-          <Link to="/Cart/">Carrito</Link>
-        </Menu.Item>
-      </Menu>
-    </Header>
-    <Content style={{ padding: "0 50px" }}>
-      <Breadcrumb style={{ margin: "16px 0" }}>
-        <Breadcrumb.Item>Home</Breadcrumb.Item>
-        <Breadcrumb.Item>List</Breadcrumb.Item>
-        <Breadcrumb.Item>App</Breadcrumb.Item>
-      </Breadcrumb>
-      {children}
-    </Content>
-    <Footer style={{ textAlign: "center" }}>
-      Ant Design ©2018 Created by Ant UED
-    </Footer>
-  </AntdLayout>
-);
+const Layout = ({ children, selectedTab }) => {
+  const [collapsed, setCollapsed] = useState();
+
+  return (
+    <AntdLayout>
+      <Sider collapsible className="sider">
+        <div className="logo" />
+        <Menu theme="dark" mode="inline">
+          <Menu.Item key="1" icon={<ShoppingCartOutlined />}>
+            sopete jaja
+          </Menu.Item>
+        </Menu>
+      </Sider>
+      <AntdLayout className="layout">
+        <Header selectedTab={selectedTab}>
+          {React.createElement(
+            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+            {
+              className: "trigger",
+              onClick: () => setCollapsed(!collapsed),
+            }
+          )}
+        </Header>
+        <Content className="layout-content">
+          <Breadcrumb />
+          {children}
+        </Content>
+        <Footer className="layout-footer">eres 1 sopete</Footer>
+      </AntdLayout>
+    </AntdLayout>
+  );
+};
 
 export default Layout;
