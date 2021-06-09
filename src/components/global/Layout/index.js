@@ -17,7 +17,7 @@ const Layout = ({ children, selectedTab }) => {
 
   return (
     <AntdLayout>
-      <Sider collapsible className="sider">
+      <Sider collapsible className="sider" collapsedWidth={0}>
         <div className="logo" />
         <Menu theme="dark" mode="inline">
           <Menu.Item key="1" icon={<ShoppingCartOutlined />}>
