@@ -19,7 +19,7 @@ const Store = () => {
     const url = "https://my-json-server.typicode.com/LuuCasado/json/db";
     fetch(url)
       .then(response => response.json())
-      .then(({ products }) => setProducts(products));
+      .then(({ products }) => setProducts(products || []));
   }, []);
 
   useEffect(() => {
@@ -35,11 +35,11 @@ const Store = () => {
     current === 1
       ? setProductList(filteredProductList.slice(0, productsPerPage))
       : setProductList(
-          filteredProductList.slice(
-            (current - 1) * productsPerPage,
-            current * productsPerPage
-          )
-        );
+        filteredProductList.slice(
+          (current - 1) * productsPerPage,
+          current * productsPerPage
+        )
+      );
   }, [current, filteredProductList]);
 
   return (

@@ -1,6 +1,9 @@
 import React from "react";
 import { Menu, Layout } from "antd";
 import { Link } from "gatsby";
+import Cart from "src/components/global/Icons/Cart"
+import DropdownMenu from "src/components/global/Header/DropdownMenu"
+import "./index.css";
 
 const { Header: AntdHeader } = Layout;
 const { Item } = Menu;
@@ -13,7 +16,7 @@ const menuItems = [
   { name: "Cart", link: "/Cart/" },
 ];
 
-const Header = ({ selectedTab }) => (
+const Header = ({ selectedTab, openSider }) => (
   <AntdHeader className="header">
     <div className="logo" />
     <Menu
@@ -28,6 +31,8 @@ const Header = ({ selectedTab }) => (
         </Item>
       ))}
     </Menu>
+    <DropdownMenu />
+    <Cart className="cart-icon" onClick={openSider} />
   </AntdHeader>
 );
 

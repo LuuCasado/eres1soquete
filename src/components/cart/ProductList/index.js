@@ -1,12 +1,21 @@
 import React from "react";
 import Card from "../Card";
-import { Row, Col } from "antd";
+import { Row } from "antd";
+import { Empty } from 'antd';
+import "./index.css";
 
-const ProductList = ({ products, removeToCart, setProductQuantity }) => (
-  <Row style={{ display: "flex", flexDirection: "column" }}>
-    {products.map(({ img, title, price, id, quantity }) => (
-      <Col key={title + id} className="product" span={6}>
+const ProductList = ({ products, removeToCart, setProductQuantity }) => {
+  if (!products.length) {
+    return (
+      <Empty description="No hay elementos en el carrito" />
+    )
+  }
+  return (
+    <Row style={{ display: "flex", flexDirection: "column" }}>
+      {products.map(({ img, title, price, id, quantity }) => (
         <Card
+          key={title + id}
+          className="product"
           img={img}
           title={title}
           price={price}
@@ -16,9 +25,9 @@ const ProductList = ({ products, removeToCart, setProductQuantity }) => (
           setProductQuantity={setProductQuantity}
           products={products}
         />
-      </Col>
-    ))}
-  </Row>
-);
+      ))}
+    </Row>
+  )
+};
 
 export default ProductList;

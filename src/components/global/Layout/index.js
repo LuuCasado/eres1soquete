@@ -1,47 +1,29 @@
 import React, { useState } from "react";
-import { Layout as AntdLayout, Menu } from "antd";
+import { Layout as AntdLayout } from "antd";
 import Header from "../Header";
+import Sider from "../Sider"
 import Breadcrumb from "../Breadcrumb";
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  ShoppingCartOutlined,
-} from "@ant-design/icons";
+
 import "antd/dist/antd.css";
 import "./index.css";
 
-const { Content, Footer, Sider } = AntdLayout;
+const { Content, Footer } = AntdLayout;
 
 const Layout = ({ children, selectedTab }) => {
-  const [collapsed, setCollapsed] = useState();
+  const [isSiderOpen, setIsSiderOpen] = useState(false);
 
   return (
     <AntdLayout>
-      <Sider collapsible className="sider" collapsedWidth={0}>
-        <div className="logo" />
-        <Menu theme="dark" mode="inline">
-          <Menu.Item key="1" icon={<ShoppingCartOutlined />}>
-            sopete jaja
-          </Menu.Item>
-        </Menu>
-      </Sider>
       <AntdLayout className="layout">
-        <Header selectedTab={selectedTab}>
-          {React.createElement(
-            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-            {
-              className: "trigger",
-              onClick: () => setCollapsed(!collapsed),
-            }
-          )}
-        </Header>
+        <Header selectedTab={selectedTab} openSider={() => setIsSiderOpen(true)} />
         <Content className="layout-content">
           <Breadcrumb />
           {children}
         </Content>
         <Footer className="layout-footer">eres 1 sopete</Footer>
       </AntdLayout>
-    </AntdLayout>
+      <Sider isSiderOpen={isSiderOpen} handleChange={setIsSiderOpen} />
+    </AntdLayout >
   );
 };
 
