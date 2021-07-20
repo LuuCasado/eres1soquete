@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import Layout from "src/components/global/Layout";
 import { Button } from "antd";
-import { logout, login, AuthContext } from "src/utils/auth";
-import { useContext } from "react";
+import { logout, login } from "src/utils/auth";
+import AuthContext from "src/storage/auth";
 import LoginForm from "src/components/auth/LoginForm";
 
 const Login = () => {
@@ -13,7 +13,7 @@ const Login = () => {
     console.log("Failed:", errorInfo);
   };
   const {
-    auth: { loggedIn, user },
+    loggedIn, user,
   } = useContext(AuthContext);
   const isAuthenticated = loggedIn && user;
 

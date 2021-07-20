@@ -1,31 +1,6 @@
-import React from "react";
 import axios from "axios";
 import { apiURL } from "src/utils/constants";
 import { navigate } from "gatsby";
-
-const defaultState = {
-  jwt: null,
-  user: {},
-  loggedIn: false,
-};
-
-export const AuthContext = React.createContext();
-
-export const initStorage = () => {
-  const storage = JSON.parse(localStorage.getItem("auth"));
-
-  if (!storage) {
-    localStorage.setItem("auth", JSON.stringify(defaultState));
-    return defaultState;
-  }
-  return storage;
-};
-
-export const wrapPageElement = ({ element }) => (
-  <AuthContext.Provider value={{ auth: initStorage() }}>
-    {element}
-  </AuthContext.Provider>
-);
 
 export const login = async ({ identifier, password, remember }) => {
   try {
@@ -68,5 +43,3 @@ export const register = async ({ username, email, password }) => {
     console.error(e);
   }
 };
-
-// TODO: add logout flow

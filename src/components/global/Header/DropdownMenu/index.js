@@ -16,7 +16,7 @@ const menu = (
       </a>
     </Menu.Item>
     <Menu.Divider />
-    <Menu.Item key="3" disabled>
+    <Menu.Item key="3" >
       3rd menu item（disabled）
     </Menu.Item>
   </Menu>

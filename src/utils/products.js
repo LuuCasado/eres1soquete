@@ -5,6 +5,5 @@ export const setProductQuantity = (products = [], id, quantity = 0) => {
   const updatedProducts = products.map(product =>
     product.id === id ? { ...product, quantity: quantity } : product
   );
-  sessionStorage.setItem("cart", JSON.stringify(updatedProducts));
   return updatedProducts;
 };

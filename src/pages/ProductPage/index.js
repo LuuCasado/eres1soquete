@@ -1,43 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Layout from "../../components/global/Layout";
-import { Row, Col, notification } from "antd";
+import { Row, Col } from "antd";
 import ProductInfo from "../../components/store/ProductInfo";
 import ReactImageMagnify from "react-image-magnify";
-import { HeartOutlined } from "@ant-design/icons";
-import { setProductQuantity } from "src/utils/products";
+import CartContext from 'src/storage/cart';
 
 const ProductPage = ({ location }) => {
+  const { addToCart } = useContext(CartContext)
   const { state: product } = location;
   const { title, price, img, id } = product;
-
-  const openNotification = quantity => {
-    notification.open({
-      message: "Producto añadido!",
-      icon: <HeartOutlined style={{ color: "#108ee9" }} />,
-      description:
-        quantity === 1
-          ? `Tu ${title} fue añadido correctamente!`
-          : `Tus ${title} fueron añadidos correctamente!`,
-    });
-  };
-
-  const addToCart = quantity => {
-    const currentCart = JSON.parse(sessionStorage.getItem("cart")) || [];
-    const index = currentCart.findIndex(product => product.id === id);
-    if (index !== -1) {
-      setProductQuantity(
-        currentCart,
-        id,
-        currentCart[index].quantity + quantity
-      );
-    } else {
-      sessionStorage.setItem(
-        "cart",
-        JSON.stringify([...currentCart, { ...product, quantity }])
-      );
-    }
-    openNotification(quantity);
-  };
 
   return (
     <Layout selectedTab="1">
@@ -67,7 +38,7 @@ const ProductPage = ({ location }) => {
           </Col>
           <Col span={12}>
             <Col span={20} offset={2}>
-              <ProductInfo title={title} price={price} addToCart={addToCart} />
+              <ProductInfo title={title} price={price} addToCart={addToCart(product)} />
             </Col>
           </Col>
         </Row>

@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { AuthContext } from "src/utils/auth";
+import AuthContext from "src/storage/auth";
 import { navigate } from "gatsby";
 import { privateRoutes } from "src/utils/constants";
 
 const PrivateRoute = ({ children, location }) => {
   const {
-    auth: { loggedIn, user },
+    loggedIn, user
   } = useContext(AuthContext);
   const isAuthenticated = loggedIn && user;
 

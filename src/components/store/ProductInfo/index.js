@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "antd";
 import { InputNumber } from "antd";
+import { openNotification } from "src/storage/cart";
+
 
 const ProductInfo = ({ title, price, addToCart }) => {
   const [quantity, setQuantity] = useState(1);
@@ -17,7 +19,10 @@ const ProductInfo = ({ title, price, addToCart }) => {
       >
         <InputNumber min={1} max={10} defaultValue={1} onChange={setQuantity} />
       </div>
-      <Button type="primary" onClick={() => addToCart(quantity)}>
+      <Button type="primary" onClick={() => {
+        openNotification(quantity)
+        addToCart(quantity)
+      }}>
         Añadir al carrito
       </Button>
     </div>

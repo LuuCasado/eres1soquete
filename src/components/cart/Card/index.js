@@ -7,11 +7,9 @@ const Card = ({
   img,
   title,
   price,
-  id,
-  removeToCart,
+  removeFromCart,
+  addToCart,
   quantity,
-  setProductQuantity,
-  products,
 }) => (
   <div
     style={{
@@ -37,13 +35,13 @@ const Card = ({
             marginRight: 10,
             cursor: quantity === 1 ? "not-allowed" : "pointer",
           }}
-          onClick={() => setProductQuantity(products, id, quantity - 1)}
+          onClick={() => removeFromCart(true)}
         ></i>
         <span>{quantity}</span>
         <i
           className="fas fa-plus"
           style={{ marginLeft: 10, cursor: "pointer" }}
-          onClick={() => setProductQuantity(products, id, quantity + 1)}
+          onClick={() => addToCart(1)}
         ></i>
       </div>
     </div>
@@ -53,7 +51,7 @@ const Card = ({
       <i
         style={{ marginLeft: 5, cursor: "pointer" }}
         className="far fa-trash-alt"
-        onClick={() => removeToCart(id)}
+        onClick={() => removeFromCart()}
       />
     </div>
   </div>

@@ -8,16 +8,17 @@ const Cart = () => {
   const removeToCart = removedId => {
     const removedFromCart = products.filter(({ id }) => id !== removedId);
     setProducts(removedFromCart);
-    sessionStorage.setItem("cart", JSON.stringify(removedFromCart));
+    localStorage.setItem("cart", JSON.stringify(removedFromCart));
   };
   const setQuantity = (products, id, quantity) =>
     setProducts(setProductQuantity(products, id, quantity));
 
   useEffect(() => {
     // eslint-disable-next-line no-undef
-    const currentCart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    const currentCart = JSON.parse(localStorage.getItem("cart")) || [];
     setProducts(currentCart);
   }, []);
+
   return (
     <Layout selectedTab={"5"}>
       <ProductList

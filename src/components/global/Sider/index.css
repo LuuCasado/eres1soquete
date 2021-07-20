@@ -24,6 +24,11 @@
   transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 }
 
+.sider-productList-container {
+  height: calc(100vh - 1em - 64px);
+  overflow: scroll;
+}
+
 .sider-empty-container {
   height: calc(100% - 7rem);
   display: flex;
