@@ -4,11 +4,17 @@ import { Row, Col } from "antd";
 import ProductInfo from "../../components/store/ProductInfo";
 import ReactImageMagnify from "react-image-magnify";
 import CartContext from 'src/storage/cart';
+import useProductList from "src/hooks/useProductList"
+
 
 const ProductPage = ({ location }) => {
   const { addToCart } = useContext(CartContext)
-  const { state: product } = location;
-  const { title, price, img, id } = product;
+  const { search } = location;
+  const query = new URLSearchParams(search);
+  const queryId = Number(query.get("id"));
+  const { products } = useProductList();
+  const product = products.find(({ id }) => id === queryId) || {};
+  const { title = "", price = "", img = "" } = product
 
   return (
     <Layout selectedTab="1">

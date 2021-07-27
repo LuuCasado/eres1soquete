@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Menu, Dropdown } from 'antd';
+import { logout } from "src/utils/auth";
 import Settings from "src/components/global/Icons/Settings"
 import "./index.css"
 
 const menu = (
   <Menu>
     <Menu.Item key="0">
-      <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-        1st menu item
-      </a>
+      Perfil
     </Menu.Item>
     <Menu.Item key="1">
-      <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-        2nd menu item
-      </a>
+      Pedidos
     </Menu.Item>
     <Menu.Divider />
-    <Menu.Item key="3" >
-      3rd menu item（disabled）
+    <Menu.Item key="3" onClick={logout}>
+      Cerrar sesión
     </Menu.Item>
   </Menu>
 );

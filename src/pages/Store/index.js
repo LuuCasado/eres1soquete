@@ -5,22 +5,16 @@ import { Row, Col } from "antd";
 import { Pagination } from "antd";
 import Carousel from "src/components/store/Carousel";
 import Filters from "../../components/store/Filters";
+import useProductList from "src/hooks/useProductList"
 import "./index.css";
 
 const Store = () => {
   const productsPerPage = 9;
   const [filters, setFilters] = useState([]);
   const [current, setCurrent] = useState(1);
-  const [products, setProducts] = useState([]);
+  const { products } = useProductList();
   const [filteredProductList, setFilteredProductList] = useState([]);
   const [productList, setProductList] = useState([...filteredProductList]);
-
-  useEffect(() => {
-    const url = "https://my-json-server.typicode.com/LuuCasado/json/db";
-    fetch(url)
-      .then(response => response.json())
-      .then(({ products }) => setProducts(products || []));
-  }, []);
 
   useEffect(() => {
     setFilteredProductList(
