@@ -37,7 +37,7 @@ const Store = () => {
   }, [current, filteredProductList]);
 
   return (
-    <Layout selectedTab={"1"}>
+    <Layout selectedTab={"1"} isLoading={!products.length}>
       <div className="site-layout-content">
         <Carousel />
         <Row>

@@ -17,7 +17,7 @@ const ProductPage = ({ location }) => {
   const { title = "", price = "", img = "" } = product
 
   return (
-    <Layout selectedTab="1">
+    <Layout isLoading={!title} selectedTab="1">
       <div className="site-layout-content">
         <Row>
           <Col span={12}>
