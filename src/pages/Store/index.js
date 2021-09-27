@@ -3,7 +3,6 @@ import Layout from "../../components/global/Layout";
 import ProductList from "../../components/store/ProductList";
 import { Row, Col } from "antd";
 import { Pagination } from "antd";
-import Carousel from "src/components/store/Carousel";
 import Filters from "../../components/store/Filters";
 import useProductList from "src/hooks/useProductList"
 import "./index.css";
@@ -37,9 +36,9 @@ const Store = () => {
   }, [current, filteredProductList]);
 
   return (
-    <Layout selectedTab={"1"} isLoading={!products.length}>
+    <Layout selectedTab={"2"} isLoading={!products.length}>
       <div className="site-layout-content">
-        <Carousel />
+        <h1 className="title" > Productos </h1>
         <Row>
           <Filters
             filters={filters}

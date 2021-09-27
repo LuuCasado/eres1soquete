@@ -59,6 +59,12 @@
   }
 }
 
+@media (min-width: 769px) and (max-width: 1399px) {
+  .sider-open .sider-content {
+    width: 30vw;
+  }
+}
+
 @media (min-width: 1400px) {
   .sider-open .sider-content {
     width: 25vw;

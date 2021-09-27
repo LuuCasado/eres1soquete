@@ -18,7 +18,7 @@ const Login = () => {
   const isAuthenticated = loggedIn && user;
 
   return (
-    <Layout selectedTab={"4"}>
+    <Layout selectedTab={"5"}>
       <div className="site-layout-content">
         {!isAuthenticated ? (
           <LoginForm onFinish={onFinish} onFinishFailed={onFinishFailed} />

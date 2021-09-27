@@ -7,7 +7,7 @@ import CartContext from 'src/storage/cart';
 const Cart = () => {
   const { products, removeFromCart, addToCart } = useContext(CartContext);
   return (
-    <Layout selectedTab={"5"}>
+    <Layout selectedTab={"6"}>
       <ProductList
         products={products}
         removeFromCart={removeFromCart}

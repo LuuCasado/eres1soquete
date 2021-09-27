@@ -1,9 +1,9 @@
 import React from "react";
 import { Carousel as AntdCarousel } from "antd";
 
-const Carousel = () => {
+const Carousel = ({ className }) => {
   return (
-    <AntdCarousel autoplay className="contentStyle">
+    <AntdCarousel autoplay className={"contentStyle " + className}>
       <div>
         <h3 className="contentStyle">Soquetes</h3>
       </div>

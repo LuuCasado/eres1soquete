@@ -9,7 +9,7 @@ const Register = () => {
     register({ username: email, email, password });
   };
   return (
-    <Layout selectedTab={"3"}>
+    <Layout >
       <div className="site-layout-content">
         <RegisterForm onFinish={onFinish} />
       </div>

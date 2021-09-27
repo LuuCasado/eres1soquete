@@ -1,26 +1,47 @@
 import React from "react";
 import { Menu, Dropdown } from 'antd';
 import { logout } from "src/utils/auth";
+import { Link } from "gatsby";
 import Settings from "src/components/global/Icons/Settings"
+import { useContext } from "react";
+import AuthContext from "src/storage/auth";
 import "./index.css"
 
-const menu = (
+const { Item, Divider } = Menu;
+
+const menuAuth = (
   <Menu>
-    <Menu.Item key="0">
+    <Item key="0">
       Perfil
-    </Menu.Item>
-    <Menu.Item key="1">
+    </Item>
+    <Item key="1">
       Pedidos
-    </Menu.Item>
-    <Menu.Divider />
-    <Menu.Item key="3" onClick={logout}>
+    </Item>
+    <Divider />
+    <Item key="3" onClick={logout}>
       Cerrar sesión
-    </Menu.Item>
+    </Item>
   </Menu>
 );
 
-const Sider = () => {
+const menuNotAuth = (
+  <Menu>
+    <Item key="0">
+      <Link to={"/Register/"}>Registrate</Link>
+    </Item>
+    <Item key="1">
+      <Link to={"/Login/"}>Ingresá</Link>
+    </Item>
+  </Menu>
+);
 
+
+const DropdownMenu = () => {
+
+  const { loggedIn, user } = useContext(AuthContext);
+  const isAuthenticated = loggedIn && user;
+
+  const menu = isAuthenticated ? menuAuth : menuNotAuth
 
   return (
     <Dropdown overlay={menu} trigger={['click']}>
@@ -31,4 +52,4 @@ const Sider = () => {
   );
 };
 
-export default Sider;
+export default DropdownMenu;

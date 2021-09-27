@@ -15,14 +15,16 @@
   },
   "dependencies": {
     "@bit/joshk.react-spinners-css.ouroboro": "^1.2.1",
-    "@fortawesome/fontawesome-free": "^5.15.3",
-    "antd": "^4.12.3",
-    "axios": "^0.21.1",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "antd": "^4.16.13",
+    "axios": "^0.21.4",
     "classnames": "^2.3.1",
-    "gatsby": "^2.26.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-image-magnify": "^2.1.1"
+    "gatsby": "^3.13.0",
+    "gatsby-plugin-jss": "^3.13.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-image-magnify": "^2.7.4",
+    "react-jss": "^10.7.1"
   },
   "devDependencies": {
     "eslint": "^7.20.0",
@@ -30,10 +32,10 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "eslint-webpack-plugin": "^2.5.2",
-    "gatsby-plugin-eslint": "^3.0.0",
-    "gatsby-plugin-root-import": "^2.0.6",
-    "prettier": "2.2.1"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-webpack-plugin": "^3.0.1",
+    "gatsby-plugin-eslint": "^4.0.0",
+    "gatsby-plugin-root-import": "^2.0.7",
+    "prettier": "^2.4.0"
   }
 }

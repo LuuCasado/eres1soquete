@@ -4,7 +4,7 @@ import PrivateRoute from "src/components/auth/PrivateRoute";
 
 const Payments = ({ location }) => (
   <PrivateRoute location={location}>
-    <Layout selectedTab={"2"}>
+    <Layout >
       <div className="site-layout-content">Payments</div>
     </Layout>
   </PrivateRoute>

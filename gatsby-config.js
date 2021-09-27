@@ -9,5 +9,6 @@ module.exports = {
   plugins: [
     // 'gatsby-plugin-eslint'
     "gatsby-plugin-root-import",
+    "gatsby-plugin-jss",
   ],
 };

@@ -3,4 +3,4 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-export { wrapPageElement } from "src/storage";
+export { wrapPageElement } from "src";

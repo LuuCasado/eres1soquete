@@ -1,18 +1,11 @@
 .dropdown-clickable {
-  position: absolute;
-  display: inline;
-  top: 0;
-  bottom: 0;
-  right: 100px;
   cursor: pointer;
+  display: flex;
 }
 
 .settings-icon {
   width: 1.5rem;
   fill: white;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: 1rem;
   cursor: pointer;
 }
