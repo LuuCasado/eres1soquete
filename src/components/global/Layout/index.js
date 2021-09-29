@@ -5,14 +5,16 @@ import Footer from "../Footer";
 import Sider from "../Sider";
 import Breadcrumb from "../Breadcrumb";
 import Ouroboro from "../Loader";
+import useStyles from "./styles"
 import "antd/dist/antd.css";
-import "./index.css";
 
-const { Content, Footer: AntdFooter } = AntdLayout;
+const { Content } = AntdLayout;
 
 const Layout = ({ children, selectedTab, isLoading = false }) => {
   const [isSiderOpen, setIsSiderOpen] = useState(false);
   const [loading, setLoading] = useState(isLoading);
+  const classes = useStyles()
+
 
   useEffect(() => {
     if (isLoading) {
@@ -28,9 +30,13 @@ const Layout = ({ children, selectedTab, isLoading = false }) => {
     <AntdLayout>
       <AntdLayout className="layout">
         <Header selectedTab={selectedTab} openSider={() => setIsSiderOpen(true)} />
-        <Content className="layout-content">
+        <Content className={classes.layoutContent}>
           <Breadcrumb />
-          {loading ? <Ouroboro color="#b99cf0" /> : children}
+          {loading ? <Ouroboro color="#b99cf0" /> :
+            <div className={classes.siteLayoutContent}>
+              {children}
+            </div>
+          }
         </Content>
 
       </AntdLayout>

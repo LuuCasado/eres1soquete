@@ -5,7 +5,7 @@ import { Row, Col } from "antd";
 import { Pagination } from "antd";
 import Filters from "../../components/store/Filters";
 import useProductList from "src/hooks/useProductList"
-import "./index.css";
+import useStyles from "./styles"
 
 const Store = () => {
   const productsPerPage = 9;
@@ -14,6 +14,8 @@ const Store = () => {
   const { products } = useProductList();
   const [filteredProductList, setFilteredProductList] = useState([]);
   const [productList, setProductList] = useState([...filteredProductList]);
+  const classes = useStyles()
+
 
   useEffect(() => {
     setFilteredProductList(
@@ -37,28 +39,26 @@ const Store = () => {
 
   return (
     <Layout selectedTab={"2"} isLoading={!products.length}>
-      <div className="site-layout-content">
-        <h1 className="title" > Productos </h1>
-        <Row>
-          <Filters
-            filters={filters}
-            setFilters={(section, value) =>
-              value
-                ? setFilters([...filters, section])
-                : setFilters([...filters].filter(filter => filter !== section))
-            }
+      <h1 className={classes.title} > Productos </h1>
+      <Row>
+        <Filters
+          filters={filters}
+          setFilters={(section, value) =>
+            value
+              ? setFilters([...filters, section])
+              : setFilters([...filters].filter(filter => filter !== section))
+          }
+        />
+        <Col span={18}>
+          <ProductList products={productList} />
+          <Pagination
+            total={filteredProductList.length}
+            pageSize={productsPerPage}
+            current={current}
+            onChange={setCurrent}
           />
-          <Col span={18}>
-            <ProductList products={productList} />
-            <Pagination
-              total={filteredProductList.length}
-              pageSize={productsPerPage}
-              current={current}
-              onChange={setCurrent}
-            />
-          </Col>
-        </Row>
-      </div>
+        </Col>
+      </Row>
     </Layout>
   );
 };

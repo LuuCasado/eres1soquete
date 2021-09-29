@@ -5,7 +5,8 @@ import { Link } from "gatsby";
 import Settings from "src/components/global/Icons/Settings"
 import { useContext } from "react";
 import AuthContext from "src/storage/auth";
-import "./index.css"
+import useStyles from "./styles"
+
 
 const { Item, Divider } = Menu;
 
@@ -40,13 +41,14 @@ const DropdownMenu = () => {
 
   const { loggedIn, user } = useContext(AuthContext);
   const isAuthenticated = loggedIn && user;
+  const classes = useStyles()
 
   const menu = isAuthenticated ? menuAuth : menuNotAuth
 
   return (
     <Dropdown overlay={menu} trigger={['click']}>
-      <div className="dropdown-clickable" >
-        <Settings className="settings-icon" />
+      <div className={classes.dropdownClickable} >
+        <Settings className={classes.settingsIcon} />
       </div>
     </Dropdown>
   );
