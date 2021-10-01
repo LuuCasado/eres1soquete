@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import Cart from "src/components/global/Icons/Cart"
 import DropdownMenu from "src/components/global/Header/DropdownMenu"
 import SearchInput from "src/components/global/SearchInput"
-import "./index.css";
+import useStyles from "./styles"
 
 const { Header: AntdHeader } = Layout;
 const { Item } = Menu;
@@ -17,29 +17,33 @@ const menuItems = [
   { name: "Carrito", link: "/Cart/" },
 ];
 
-const Header = ({ selectedTab, openSider }) => (
-  <AntdHeader className="header">
-    <div className="left-aligned-icons">
-      <img className="logo" src="/images/logo.png" alt="logo" />
-      <Menu
-        className="header"
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={[selectedTab]}
-      >
-        {menuItems.map(({ name, link }, index) => (
-          <Item key={index + 1}>
-            <Link to={link}>{name}</Link>
-          </Item>
-        ))}
-      </Menu>
-    </div>
-    <div className="right-aligned-icons" >
-      <SearchInput />
-      <DropdownMenu />
-      <Cart className="cart-icon" onClick={openSider} />
-    </div>
-  </AntdHeader>
-);
+const Header = ({ selectedTab, openSider }) => {
+  const classes = useStyles()
+
+  return (
+    <AntdHeader className={classes.header}>
+      <div className="left-aligned-icons">
+        <img className={classes.logo} src="/images/logo.png" alt="logo" />
+        <Menu
+          className={classes.header}
+          theme="dark"
+          mode="horizontal"
+          defaultSelectedKeys={[selectedTab]}
+        >
+          {menuItems.map(({ name, link }, index) => (
+            <Item key={index + 1}>
+              <Link to={link}>{name}</Link>
+            </Item>
+          ))}
+        </Menu>
+      </div>
+      <div className="right-aligned-icons" >
+        <SearchInput />
+        <DropdownMenu />
+        <Cart className="cart-icon" onClick={openSider} />
+      </div>
+    </AntdHeader>
+  );
+}
 
 export default Header;
