@@ -1,12 +1,27 @@
 import { createUseStyles } from 'react-jss'
 
 export default createUseStyles({
-  footer: {
 
-    "& div.section-social-networks": {
-      display: "flex",
-      justifyContent: "center"
+  sectionShipping: {
+    display: "flex",
+    flexDirection: "column",
+
+    "& img.delivery-icon": {
+      width: "3rem",
+      marginTop: "-5px",
+      marginBottom: "5px",
+      alignSelf: "center"
     },
+    "& img.correo-logo": {
+      width: "7rem",
+      alignSelf: "center"
+    },
+  },
+
+  sectionSocialNetworks: {
+    display: "flex",
+    justifyContent: "center",
+
     "& i.fab.fa-instagram": {
       marginRight: "10px",
       float: "left",
@@ -20,17 +35,18 @@ export default createUseStyles({
       marginLeft: "10px",
       float: "left",
     },
+  },
 
-    "& div.section-contact": {
-      display: "flex",
-      justifyContent: "center"
-    },
+  sectionContact: {
+    display: "flex",
+    justifyContent: "center"
+  },
 
-    "& div.section-payments": {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center"
-    },
+  sectionPayments: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+
     "& i.fas.fa-credit-card": {
       color: "gray",
       fontSize: "2rem",
@@ -45,27 +61,10 @@ export default createUseStyles({
       width: "7rem",
       marginTop: "1rem"
     },
+  },
 
-
-    "& div.section-shipping": {
-      display: "flex",
-      flexDirection: "column",
-    },
-    "& img.delivery-icon": {
-      width: "3rem",
-      marginTop: "-5px",
-      marginBottom: "5px",
-      alignSelf: "center"
-    },
-    "& img.correo-logo": {
-      width: "7rem",
-      alignSelf: "center"
-    },
-
-
-    "& div.copyright": {
-      background: "rgba(148, 148, 148, 0.8)",
-      textAlign: "center"
-    }
+  copyright: {
+    background: "rgba(148, 148, 148, 0.8)",
+    textAlign: "center"
   }
 })

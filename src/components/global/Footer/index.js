@@ -15,7 +15,7 @@ const Footer = () => {
           <div>
             <Divider plain>Envios</Divider>
           </div>
-          <div className="section-shipping">
+          <div className={classes.sectionShipping}>
             <img className="delivery-icon" src="/images/delivery.png" alt="Delivery" />
             <img className="correo-logo" src="/images/correoargentino.png" alt="Correo Argentino" />
           </div>
@@ -24,7 +24,7 @@ const Footer = () => {
           <div>
             <Divider plain>Redes Sociales</Divider>
           </div>
-          <div className="section-social-networks">
+          <div className={classes.sectionSocialNetworks}>
             <a className="instagram-link" href="https://www.instagram.com/eres1soquete/" target="_blank">
               <i className="fab fa-instagram"></i>
             </a>
@@ -37,7 +37,7 @@ const Footer = () => {
           <div>
             <Divider plain>Contacto</Divider>
           </div>
-          <div className="section-contact">
+          <div className={classes.sectionContact}>
             <span className="phone">2236685193</span>
             <Divider className="vertical-divider" type="vertical" />
             <span className="email">eres1soquete@gmail.com</span>
@@ -47,7 +47,7 @@ const Footer = () => {
           <div>
             <Divider plain>Medios de pago</Divider>
           </div>
-          <div className="section-payments">
+          <div className={classes.sectionPayments}>
             <div>
               <i className="fas fa-credit-card"></i>
               <i className="fas fa-money-bill-wave"></i>
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </Col>
       </Row>
-      <div className="copyright" >Copyright Eres 1 soquete - 2021. Todos los derechos reservados. Defensa de las y los consumidores. Para reclamos ingrese aquí </div>
+      <div className={classes.copyright} >Copyright Eres 1 soquete - 2021. Todos los derechos reservados. Defensa de las y los consumidores. Para reclamos ingrese aquí </div>
     </AntdFooter>
 
   );

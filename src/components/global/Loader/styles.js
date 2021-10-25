@@ -56,24 +56,6 @@ export default createUseStyles({
       left: "-100%",
       transformOrigin: "100% 50% 0"
     },
-    /*
-    "@keyframes loader-rotate": {
-      "0%": {
-        transform: "rotate(0deg)",
-      },
-      "25%": {
-        transform: "rotate(0deg)",
-      },
-      "50%": {
-        transform: "rotate(180deg)",
-      },
-      "75%": {
-        transform: "rotate(180deg)",
-      },
-      "100%": {
-        transform: "rotate(360deg)",
-      }
-    }*/
   },
 
   left: {},
