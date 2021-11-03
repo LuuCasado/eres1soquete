@@ -9,13 +9,17 @@ import useStyles from "./styles"
 
 const Store = () => {
   const productsPerPage = 9;
-  const [filters, setFilters] = useState([]);
+
+  const { search } = location;
+  const query = new URLSearchParams(search);
+  const querySection = query.get("section");
+  const [filters, setFilters] = useState(querySection ? [querySection] : []);
   const [current, setCurrent] = useState(1);
   const { products } = useProductList();
   const [filteredProductList, setFilteredProductList] = useState([]);
   const [productList, setProductList] = useState([...filteredProductList]);
   const classes = useStyles()
-
+  console.log(querySection)
 
   useEffect(() => {
     setFilteredProductList(
