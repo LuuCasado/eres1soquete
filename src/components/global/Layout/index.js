@@ -6,6 +6,8 @@ import Sider from "../Sider";
 import Breadcrumb from "../Breadcrumb";
 import Ouroboro from "../Loader";
 import useStyles from "./styles"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "antd/dist/antd.css";
 
 const { Content } = AntdLayout;

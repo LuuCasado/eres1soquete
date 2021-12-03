@@ -5,6 +5,7 @@ import { Row, Col } from "antd";
 import { Pagination } from "antd";
 import Filters from "../../components/store/Filters";
 import useProductList from "src/hooks/useProductList"
+import ProductCarousel from "src/components/home/ProductCarousel";
 import useStyles from "./styles"
 
 const Store = () => {
@@ -19,7 +20,6 @@ const Store = () => {
   const [filteredProductList, setFilteredProductList] = useState([]);
   const [productList, setProductList] = useState([...filteredProductList]);
   const classes = useStyles()
-  console.log(querySection)
 
   useEffect(() => {
     setFilteredProductList(
@@ -63,6 +63,7 @@ const Store = () => {
           />
         </Col>
       </Row>
+      <ProductCarousel products={productList} />
     </Layout>
   );
 };

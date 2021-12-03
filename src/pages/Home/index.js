@@ -4,6 +4,7 @@ import Carousel from "src/components/home/Carousel";
 import AboutServices from "src/components/home/AboutServices";
 import Tags from "src/components/home/Tags";
 import PrincipalCategories from "src/components/home/PrincipalCategories";
+import ProductCarousel from "src/components/home/ProductCarousel";
 import useStyles from "./styles"
 
 
@@ -15,6 +16,7 @@ const Home = () => {
       <AboutServices />
       <Tags />
       <PrincipalCategories />
+      <ProductCarousel />
       <div>
         <img className={classes.mayoristaImg} src="https://www.soldeotono.com.ar/Content/assets/images/mayoristas/banner.jpg" />
       </div>

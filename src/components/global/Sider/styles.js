@@ -65,5 +65,74 @@ export default createUseStyles({
 
   siderTitle: {
     alignSelf: "baseline",
-  }
+  },
+
+  siderFooter: {
+    position: "absolute",
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
+    padding: "20px",
+
+    "& > div": {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+
+      "& > p": {
+        fontWeight: "bold",
+
+        "&:first-of-type": {
+          fontSize: "2rem",
+        },
+        "&:last-of-type": {
+          fontSize: "1.5rem",
+        },
+      },
+
+    },
+
+    "& $shipping": {
+      display: "flex",
+      flexDirection: "column",
+      marginTop: "1rem",
+
+      "& i": {
+        marginRight: "5px"
+      },
+
+      "& > div": {
+        display: "flex",
+        alignItems: "center",
+
+        "& > p": {
+          fontSize: "1rem",
+          marginBottom: "5px"
+        },
+
+      },
+
+      "& > a": {
+        color: "grey",
+        "&:hover": {
+          color: "#f29cdd",
+        }
+      },
+
+      "& input": {
+        marginRight: "10px"
+      }
+    },
+
+    "& button": {
+      backgroundColor: "#b99cf0",
+      borderColor: "#b99cf0",
+
+      "&:hover": {
+        backgroundColor: "#f29cdd",
+        borderColor: "#f29cdd"
+      }
+    },
+  },
+  shipping: {}
 });
