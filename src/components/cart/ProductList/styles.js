@@ -2,7 +2,8 @@ import { createUseStyles } from 'react-jss'
 
 export default createUseStyles({
   container: {
-    display: "flex",
-    flexDirection: "column"
+    display: "block",
+    overflowY: "scroll",
+    overflowX: "hidden"
   }
 })

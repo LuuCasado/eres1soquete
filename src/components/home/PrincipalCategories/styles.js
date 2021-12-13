@@ -45,6 +45,7 @@ export default createUseStyles({
           fontSize: "2.5rem",
 
         },
+        /*
         "& button": {
           backgroundColor: "#555",
           color: "white",
@@ -54,6 +55,7 @@ export default createUseStyles({
           cursor: "pointer",
           borderRadius: "5px"
         }
+      */
       }
     },
 

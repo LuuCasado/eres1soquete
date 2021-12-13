@@ -17,6 +17,9 @@ const Layout = ({ children, selectedTab, isLoading = false }) => {
   const [loading, setLoading] = useState(isLoading);
   const classes = useStyles()
 
+  useEffect(() => {
+    document.getElementsByTagName("body")[0].style.overflowX = "hidden"
+  }, [])
 
   useEffect(() => {
     if (isLoading) {
@@ -27,6 +30,16 @@ const Layout = ({ children, selectedTab, isLoading = false }) => {
       }, 1000);
     }
   }, [isLoading]);
+
+  useEffect(() => {
+    const body = document.getElementsByTagName("body")[0]
+    if (isSiderOpen) {
+      body.style.overflowY = "hidden"
+    } else {
+      body.style.overflowY = "scroll"
+
+    }
+  }, [isSiderOpen]);
 
   return (
     <AntdLayout>

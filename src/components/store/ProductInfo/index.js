@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import { Button } from "antd";
+import Button from "src/components/global/Button";
+import ShippingForm from "src/components/global/ShippingForm";
+import useStyles from "./styles";
 import { InputNumber } from "antd";
 import { openNotification } from "src/storage/cart";
 
 
 const ProductInfo = ({ title, price, addToCart }) => {
+  const classes = useStyles()
   const [quantity, setQuantity] = useState(1);
+  const [isShippingCostVisible, setIsShippingCostVisible] = useState(false);
 
   return (
     <div>
@@ -25,6 +29,7 @@ const ProductInfo = ({ title, price, addToCart }) => {
       }}>
         Añadir al carrito
       </Button>
+      {isShippingCostVisible ? <ShippingForm className={classes.shippingForm} /> : <Button type="link" onClick={() => setIsShippingCostVisible(true)} >Costos de envío</Button>}
     </div>
   );
 };

@@ -1,10 +1,11 @@
 import React from "react";
 import Card from "../Card";
+import cn from "classnames";
 import { Row } from "antd";
 import { Empty } from 'antd';
 import useStyles from "./styles"
 
-const ProductList = ({ products, removeFromCart, addToCart }) => {
+const ProductList = ({ products, removeFromCart, addToCart, className }) => {
   const classes = useStyles()
   if (!products.length) {
     return (
@@ -12,7 +13,7 @@ const ProductList = ({ products, removeFromCart, addToCart }) => {
     )
   }
   return (
-    <Row className={classes.container}>
+    <Row className={cn(classes.container, className)}>
       {products.map(({ img, title, price, id, quantity }, index) => (
         <Card
           key={title + id}

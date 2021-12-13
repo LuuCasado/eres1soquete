@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Input, Tooltip, Button } from "antd";
+import Button from "src/components/global/Button";
+import { Form, Input, Tooltip } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
 
 const formItemLayout = {

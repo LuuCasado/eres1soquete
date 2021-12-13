@@ -35,7 +35,7 @@ export default createUseStyles({
 
   siderProductListContainer: {
     height: "calc(100vh - 1em - 64px)",
-    overflow: "scroll"
+    overflow: "hidden"
   },
 
   siderEmptyContainer: {
@@ -92,47 +92,13 @@ export default createUseStyles({
 
     },
 
-    "& $shipping": {
-      display: "flex",
-      flexDirection: "column",
-      marginTop: "1rem",
 
-      "& i": {
-        marginRight: "5px"
-      },
-
-      "& > div": {
-        display: "flex",
-        alignItems: "center",
-
-        "& > p": {
-          fontSize: "1rem",
-          marginBottom: "5px"
-        },
-
-      },
-
-      "& > a": {
-        color: "grey",
-        "&:hover": {
-          color: "#f29cdd",
-        }
-      },
-
-      "& input": {
-        marginRight: "10px"
-      }
-    },
-
-    "& button": {
-      backgroundColor: "#b99cf0",
-      borderColor: "#b99cf0",
-
-      "&:hover": {
-        backgroundColor: "#f29cdd",
-        borderColor: "#f29cdd"
-      }
-    },
   },
-  shipping: {}
+  productList: {
+    height: "calc(100vh - 48px - 330px) "
+  },
+  shippingFormOpen: {
+    height: "calc(100vh - 48px - 410px) "
+  }
+
 });

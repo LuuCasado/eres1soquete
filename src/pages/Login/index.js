@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Layout from "src/components/global/Layout";
-import { Button } from "antd";
+import Button from "src/components/global/Button";
 import { logout, login } from "src/utils/auth";
 import AuthContext from "src/storage/auth";
 import LoginForm from "src/components/auth/LoginForm";

@@ -4,7 +4,8 @@ export default createUseStyles({
   siteLayoutContent: {
     minHeight: "280px",
     padding: "24px",
-    background: "#fff"
+    background: "#fff",
+    position: "relative",
   },
 
   layoutContent: {

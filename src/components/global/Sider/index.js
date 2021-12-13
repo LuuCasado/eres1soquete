@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import ProductList from "src/components/cart/ProductList";
 import { Divider } from 'antd';
-import { Button } from "antd";
+import ShippingForm from "src/components/global/ShippingForm";
+import Button from "src/components/global/Button";
 import cn from "classnames";
 import CartContext from 'src/storage/cart';
 import useStyles from "./styles"
@@ -24,6 +25,7 @@ const Sider = ({ isSiderOpen, handleChange }) => {
         <Divider className={classes.siderTitle} >Mi carrito</Divider>
         <div className={cn({ [classes.siderEmptyContainer]: !products.length }, classes.siderProductListContainer)}>
           <ProductList
+            className={cn(isShippingCostVisible ? classes.shippingFormOpen : classes.productList)}
             products={products}
             removeFromCart={removeFromCart}
             addToCart={addToCart}
@@ -40,19 +42,7 @@ const Sider = ({ isSiderOpen, handleChange }) => {
                   Iniciar compra
                 </Button>
                 <Divider />
-                {isShippingCostVisible ? (<div className={classes.shipping}>
-                  <div>
-                    <i className="far fa-truck" ></i>
-                    <p>Metodos de envio </p>
-                  </div>
-                  <div>
-                    <input placeholder="Tu código postal"></input>
-                    <Button type="primary">
-                      Calcular
-                    </Button>
-                  </div>
-                  <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank">No se mi código postal</a>
-                </div>) : <Button type="link" onClick={() => setIsShippingCostVisible(true)} >Costos de envío</Button>}
+                {isShippingCostVisible ? <ShippingForm /> : <Button type="link" onClick={() => setIsShippingCostVisible(true)} >Costos de envío</Button>}
               </div>
             </>
           )}

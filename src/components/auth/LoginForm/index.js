@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Input, Button, Checkbox } from "antd";
+import Button from "src/components/global/Button";
+import { Form, Input, Checkbox } from "antd";
 
 const layout = {
   labelCol: {

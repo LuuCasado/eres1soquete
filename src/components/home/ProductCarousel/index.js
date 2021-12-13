@@ -16,13 +16,16 @@ const ProductCarousel = ({ products }) => {
   };
 
   return (
-    <Slider {...settings}>
-      {products?.map(({ img, title, price, id }, index) => (
-        <Col key={title + index} className={classes.product} span={8}>
-          <Card img={img} title={title} price={price} id={id} />
-        </Col>
-      ))}
-    </Slider>
+    <>
+      <h2>Nuevos Ingresos</h2>
+      <Slider className={classes.slider} {...settings}>
+        {products?.map(({ img, title, price, id }, index) => (
+          <Col key={title + index} className={classes.product} span={8}>
+            <Card img={img} title={title} price={price} id={id} />
+          </Col>
+        ))}
+      </Slider>
+    </>
   );
 }
 
